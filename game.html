@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -16,7 +16,7 @@
         .page-one {
             width: 100%;
             height: 100vh;
-            background: url("./images/首页.gif") no-repeat center center;
+            background: url("./images/首页.gif") no-repeat top center;
             background-size: cover;
 
 
@@ -86,7 +86,9 @@
         .page-five {
             width: 100%;
             height: 100vh;
-            background: url('./images/bg-2.png') repeat top center;
+            background: url('./images/bg-2.png') no-repeat top center;
+            background-size: cover;
+
             overflow: auto;
             display: none;
         }
@@ -130,10 +132,7 @@
         }
 
         .list .icon:first-child {
-            /* display: inline-block;
-            width: 38px;
-            height:38px;
-            overflow: hidden; */
+           
             background-position: -1px -2px;
         }
 
@@ -325,9 +324,6 @@
             e.classList.add('show')
         })
         e.addEventListener('click', function () {
-            console.log("dianjil")
-            // e.classList.remove('show')
-            // f.classList.add('show')
             $('.page-four').css('display','none')
             $('.page-five').css('display','block')
             ready();
@@ -391,7 +387,9 @@
                 }else{
                     clearInterval(timer)
                     clearInterval(timed)
-                    
+                    if(data.indexOf("炸弹")){
+                        $(this).children().eq(0).attr('src','./images/4_04.png')
+                    }
                     $('.warn i').on('click',function(){
                         $('.warn').css('display','none')
                     })
@@ -438,6 +436,7 @@
         function createRedPackageNode() {
             let leftAddress=38;
             // let value=2
+            let e=2
            for(var i=0; i<4;i++){
               
             //    value+=value
@@ -452,7 +451,7 @@
             $newNode.children().attr('src','./images/ts_'+item+'.png'); 
 
             $newNode.attr('data-txt', JSON.stringify(txt));
-
+            
             //红包随机旋转-30～30度
             $newNode.css({
                 'z-index': zIndex++,
@@ -462,8 +461,9 @@
             });
             $redPackage.append($newNode);
 
-            redPackageBoxSpeed($newNode, 5,leftAddress);
+            redPackageBoxSpeed($newNode, e,leftAddress);
             leftAddress+=90
+            e-=.2
            }
         }
 
