@@ -1,0 +1,248 @@
+@import "../sass/_mixin";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.page-one {
+
+    @include page("../../images/首页.gif");
+    /* width: 100%;
+    height: 100vh;
+    background: url("../../images/首页.gif") no-repeat top center; */
+    background-size: cover;
+
+
+}
+
+.page-one.hidden {
+    display: none;
+}
+
+.page-two {
+    display: none;
+    overflow: auto;
+    @include pagey("../../images/bg-01.png")
+    /* width: 100%;
+    height: 100vh;
+    background: url('../../images/bg-01.png') repeat-x top center; */
+}
+
+.page-two .icon {
+    text-align: center;
+
+    margin: 65% auto 0;
+}
+
+.page-two .loading {
+    margin: 14px auto 0;
+    width: 200px;
+    height: 10px;
+    border-radius: 6px;
+    background-color: #57D5C0;
+}
+
+.page-two .bar {
+    width: 0px;
+    height: 10px;
+    border-radius: 6px;
+    background-color: #FF7900;
+}
+
+.page-two.show {
+    display: block
+}
+
+.page-three {
+    @include page("../../images/rule.jpg");
+    /* width: 100%;
+    height: 100vh;
+    background: url('../../images/rule.jpg') no-repeat center center; */
+    background-size: cover;
+    display: none;
+}
+
+.page-three.show {
+    display: block;
+}
+
+.page-four {
+    @include page("../../images/ready.gif");
+    /* width: 100%;
+    height: 100vh;
+    background: url('../../images/ready.gif') no-repeat center center; */
+    background-size: cover;
+    display: none;
+}
+
+.page-four.show {
+    display: block;
+}
+
+.page-five {
+    @include page("../../images/bg-2.png");
+    /* width: 100%;
+    height: 100vh;
+    background: url('../../images/bg-2.png') no-repeat top center; */
+    background-size: cover;
+
+    overflow: auto;
+    display: none;
+}
+
+.page-five.show {
+    display: block;
+}
+
+.page-five .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15% auto 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.top .clock {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    overflow: hidden;
+    background: url('../../images/sprit.png') no-repeat scroll -2px -72px;
+    /* background-size: 60px 30px; */
+
+}
+
+.list {
+    display: flex;
+    margin: 5px 0;
+    justify-content: space-around;
+}
+
+.list .icon {
+    display: inline-block;
+    width: 40px;
+    height: 36px;
+    overflow: hidden;
+    background: url('../../images/sprit.png') no-repeat scroll
+}
+
+.list .icon:first-child {
+    @include bgp(-1px, -2px)
+    /* background-position: -1px -2px; */
+}
+
+.list .icon:nth-child(2) {
+    @include bgp(-48px, -2px)
+    /* background-position: -48px -2px; */
+
+}
+
+.list .icon:nth-child(3) {
+    @include bgp(-95px, -2px)
+    /* background-position: -95px -2px; */
+
+}
+
+.list .icon:nth-child(4) {
+    @include bgp(-128px, -2px) // background-position: -128px -2px;
+}
+
+.list .icon:nth-child(5) {
+    @include bgp(-172px, -2px);
+    // background-position: -172px -2px;
+
+}
+
+.list .icon:nth-child(6) {
+    @include bgp(-220px, -2px);
+    // background-position: -220px -2px;
+
+}
+
+.list .icon:nth-child(7) {
+    @include bgp(-258px, -2px);
+
+    // background-position: -258px -2px;
+
+}
+
+.list .icon:nth-child(8) {
+    @include bgp(-300px, -2px);
+
+    // background-position: -300px -2px;
+
+}
+
+
+.gameGrea {
+    height: 500px;
+    background: url('../../images/4_bg.png') no-repeat top center;
+    background-size: cover;
+    // position: relative;
+    @include posL(relative, 0, 0)
+}
+
+.gift {
+    display: inline-block;
+    @include posL(absolute, 0, 200) // position: absolute;
+    // top: 0;
+    // left: 200px;
+}
+
+.gift img {
+    width: 40px;
+    height: 40px;
+}
+
+.box {
+    display: none;
+}
+
+.warn {
+    display: none;
+    width: 100%;
+    @include posL(fixed, 0, 0);
+
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    z-index: 9999;
+    overflow: auto;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    text-align: center
+}
+
+.warn .contain {
+    margin: 100px auto 0;
+
+
+}
+
+.warn .contain img {
+    width: 80%;
+    height: 80%;
+}
+
+.warn .try {
+    @include posL(absolute, 68%, 16%);
+    // position: absolute;
+    // top: 68%;
+    // left: 16%;
+}
+
+.warn .try img {
+
+    width: 100px;
+    height: 50px;
+}
+
+.warn i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    @include posR(absolute, 10px, 15px)
+}
